@@ -1,0 +1,31 @@
+
+@url = http://127.0.0.1:3000/api/citas
+
+
+### obtener citas reservadas por proveedor
+GET {{url}}/proveedor/1 HTTP/1.1
+
+### obtener dias no laborales
+GET {{url}}/diasNoLaborales HTTP/1.1
+
+
+### obtener horario disponible
+GET {{url}}/horarioDisponible?fecha=2024-08-22&idProveedor=1&duracionServicio=30 HTTP/1.1
+
+ 
+### registrar cita por proveedor y servicio
+POST {{url}}/guardarCita
+Content-Type: application/json
+
+{
+    "idServicio": 1,
+    "duracionServicio": 30,
+    "idProveedor": 1,
+    "fechaInicio": "2024-08-22",
+    "hora": "09:30",
+    "nombreCliente": "prueba",
+    "apellidoCliente": "prueba",
+    "correoCliente": "prueba@prueba.com",
+    "telefonoCliente": 11111111,
+    "notasCLiente": "prueba nota",
+}
