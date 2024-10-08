@@ -138,7 +138,7 @@ export const autenticar = async (req, res, next) => {
     res.cookie("accessToken", accessToken, {
       httpOnly: false, // Cambiar a true si no deseas que el cliente acceda a la cookie desde JS
       secure: process.env.NODE_ENV === "production", // Solo en HTTPS en producción
-      sameSite: "Strict", // Protege contra ataques CSRF
+      sameSite: "None", // Protege contra ataques CSRF
       maxAge: 15 * 60 * 1000, // 15 minutos (en milisegundos)
       signedCookie: true,
     });
@@ -147,7 +147,7 @@ export const autenticar = async (req, res, next) => {
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // Solo en HTTPS en producción
-      sameSite: "Strict",
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
       signedCookie: true,
     });
@@ -226,7 +226,7 @@ export const refreshToken = async (req, res, next) => {
     res.cookie("accessToken", accessToken, {
       httpOnly: false, // Cambiar a true si no deseas que el cliente acceda a la cookie desde JS
       secure: process.env.NODE_ENV === "production", // Solo en HTTPS en producción
-      sameSite: "Strict", // Protege contra ataques CSRF
+      sameSite: "None", // Protege contra ataques CSRF
       maxAge: 15 * 60 * 1000, // 15 minutos (en milisegundos)
       signedCookie: true,
     });
@@ -235,7 +235,7 @@ export const refreshToken = async (req, res, next) => {
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // Solo en HTTPS en producción
-      sameSite: "Strict",
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
       signedCookie: true,
     });
@@ -278,7 +278,6 @@ export const refreshToken = async (req, res, next) => {
 export const recuperarUsuario = async (req, res, next) => {
   try {
     const { correo, usuario } = req.body;
-
     // Generar una nueva contraseña temporal
     const passwordTextoPlano = generarPassword();
     // Encriptar la contraseña
