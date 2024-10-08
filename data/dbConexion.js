@@ -1,6 +1,6 @@
 import mysql from "mysql2/promise";
 
-import { DB, PASS, SERVER, USER } from "../config.js";
+import { DB, PASS, PORT_DB, SERVER, USER } from "../config.js";
 
 const conexionMySql = async () => {
   // Conexion a mysql
@@ -10,7 +10,7 @@ const conexionMySql = async () => {
       host: SERVER,
       user: USER,
       database: DB,
-      // port: 3306,
+      port: PORT_DB,
       password: PASS,
     });
 

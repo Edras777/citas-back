@@ -14,6 +14,7 @@ export const USER = process.env.USER;
 export const PASS = process.env.PASS;
 export const SERVER = process.env.SERVER;
 export const DB = process.env.DB;
+export const PORT_DB = process.env.PORT_DB;
 
 export const HOST_FRONT = process.env.HOST_FRONT ?? "http://localhost:5173";
 
