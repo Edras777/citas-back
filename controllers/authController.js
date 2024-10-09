@@ -53,7 +53,7 @@ export const preAutenticar = async (req, res, next) => {
       <html>
         <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; text-align: center;">
           <div style="background-color: #ffffff; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-            <img src="https://scontent-dfw5-2.xx.fbcdn.net/v/t39.30808-6/302075580_591681799070646_3545406768882047780_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rbd7EIrYOEEQ7kNvgHKnpsk&_nc_ht=scontent-dfw5-2.xx&_nc_gid=Ak6eBvjKhx9YYuLU6wOQIrH&oh=00_AYD9_zvVllLGg6Gm5e2BJDjx6YlRHhq7YrGLl45hhBcLMA&oe=6702C348" alt="THE KING BARBER" style="width: 150px; margin-bottom: 20px;" />
+            <img src="https://the-king-barber.onrender.com/logo.png" alt="THE KING BARBER" style="width: 150px; margin-bottom: 20px;" />
             <h1 style="color: #333;">Hola, ${user.usuario}!</h1>
             <p style="font-size: 16px; color: #555;">Recibimos una solicitud para iniciar sesión en tu cuenta.</p>
             <p style="font-size: 16px; color: #555;">Por favor, introduce el siguiente código de verificación para continuar:</p>
