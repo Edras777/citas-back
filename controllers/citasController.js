@@ -176,6 +176,7 @@ export const getHorarioDisponiblePorFecha = async (req, res, next) => {
     let { fecha, idProveedor, duracionServicio } = req.query;
 
     duracionServicio = parseInt(duracionServicio);
+    console.log("Zona horaria actual:", process.env.TZ);
 
     const diaSemana = new Date(fecha).getDay();
     const citasReservadas = await ejecutarSP(SP_CITAS_RESERVADAS_POR_FECHA, [
