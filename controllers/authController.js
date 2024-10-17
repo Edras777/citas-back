@@ -175,8 +175,18 @@ export const autenticar = async (req, res, next) => {
 
 export const logout = (req, res) => {
   try {
-    res.clearCookie("accessToken");
-    res.clearCookie("refreshToken");
+    res.clearCookie("accessToken", {
+      httpOnly: false, // Cambiar a true si no deseas que el cliente acceda a la cookie desde JS
+      secure: process.env.NODE_ENV === "production", // Solo en HTTPS en producción
+      sameSite: "None", // Protege contra ataques CSRF
+      signedCookie: true,
+    });
+    res.clearCookie("refreshToken", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Solo en HTTPS en producción
+      sameSite: "None",
+      signedCookie: true,
+    });
 
     res.json({
       resultado: null,
